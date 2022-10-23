@@ -22,9 +22,6 @@ const agg = [
       },
     },
   },
-  {
-    $limit: 10,
-  },
 ];
 
 async function run() {
