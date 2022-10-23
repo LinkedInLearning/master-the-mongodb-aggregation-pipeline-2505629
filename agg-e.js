@@ -29,7 +29,12 @@ const agg = [
   {
     $addFields: {
       salePrice: {
-        $multiply: ["$price", "$discount"],
+        $multiply: [
+          "$price",
+          {
+            $subtract: [1, "$discount"],
+          },
+        ],
       },
     },
   },
