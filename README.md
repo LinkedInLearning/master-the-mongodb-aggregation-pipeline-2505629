@@ -44,9 +44,11 @@ changes using this command: git commit -m "some message"
      [MongoDB Atlas](https://www.mongodb.com/atlas)
 2. Clone this repository into your local machine using the terminal (Mac), CMD
    (Windows), or a GUI tool like SourceTree.
-3. Copy the `.env.example` file and name it `.env`
+3. Copy the `.env.example` file and name it `.env`.
 4. Replace `{YOUR-MONGODB-URI}` in the `.env` file with your MongoDB Connection
-   String
+   String.
+5. Run `npm install` to install the required `mongodb` and `dotenv`
+   dependencies.
 
 [0]: # "Replace these placeholder URLs with actual course URLs"
 [lil-course-url]: https://www.linkedin.com/learning/
