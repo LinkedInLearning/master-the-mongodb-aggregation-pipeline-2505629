@@ -7,17 +7,23 @@ const client = new MongoClient(uri);
 
 const agg = [
   {
-    $match: {
-      "customer.address.state": "CA",
+    $group: {
+      _id: "$customer.fullName",
+      totalOrders: {
+        $count: {},
+      },
+      totalItemsPurchased: {
+        $sum: {
+          $size: "$items",
+        },
+      },
+      totalSpent: {
+        $sum: "$total",
+      },
     },
   },
   {
-    $sort: {
-      total: -1,
-    },
-  },
-  {
-    $limit: 5,
+    $limit: 10,
   },
 ];
 
@@ -25,7 +31,7 @@ async function run() {
   try {
     const database = client.db("linkedin");
     const result = await database.collection("orders").aggregate(agg).toArray();
-    console.log(JSON.stringify(result));
+    console.log(result);
   } catch (e) {
     console.log(e);
   } finally {
