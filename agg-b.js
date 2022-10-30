@@ -11,11 +11,7 @@ const agg = [];
 async function run() {
   try {
     const database = client.db("linkedin");
-    const result = await database
-      .collection("customers")
-      .aggregate(agg)
-      .toArray();
-
+    const result = await database.collection("orders").aggregate(agg).toArray();
     console.log(result);
   } catch (e) {
     console.log(e);
