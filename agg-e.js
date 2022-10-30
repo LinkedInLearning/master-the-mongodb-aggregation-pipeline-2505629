@@ -41,6 +41,9 @@ const agg = [
   {
     $unset: "quantity",
   },
+  {
+    $out: "q4_specials",
+  },
 ];
 
 async function run() {
@@ -50,7 +53,9 @@ async function run() {
       .collection("products")
       .aggregate(agg)
       .toArray();
-    console.log(result);
+
+    const data = await database.collection("q4_specials").find().toArray();
+    console.log(data);
   } catch (e) {
     console.log(e);
   } finally {
