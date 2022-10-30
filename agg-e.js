@@ -7,55 +7,40 @@ const client = new MongoClient(uri);
 
 const agg = [
   {
-    $match: {
-      quantity: {
-        $gt: 500,
+    $unwind: {
+      path: "$items",
+      includeArrayIndex: "index",
+    },
+  },
+  {
+    $group: {
+      _id: "$items.vendor",
+      purchases: {
+        $count: {},
       },
     },
   },
   {
-    $addFields: {
-      discount: {
-        $cond: [
-          {
-            $lte: ["$price", 500],
-          },
-          0.4,
-          0.65,
-        ],
-      },
+    $sort: {
+      purchases: -1,
     },
   },
   {
-    $addFields: {
-      salePrice: {
-        $multiply: [
-          "$price",
-          {
-            $subtract: [1, "$discount"],
-          },
-        ],
-      },
+    $lookup: {
+      from: "vendors",
+      localField: "_id",
+      foreignField: "_id",
+      as: "vendor",
     },
-  },
-  {
-    $unset: "quantity",
-  },
-  {
-    $out: "q4_specials",
   },
 ];
 
 async function run() {
   try {
     const database = client.db("linkedin");
-    const result = await database
-      .collection("products")
-      .aggregate(agg)
-      .toArray();
+    const result = await database.collection("orders").aggregate(agg).toArray();
 
-    const data = await database.collection("q4_specials").find().toArray();
-    console.log(data);
+    console.log(result);
   } catch (e) {
     console.log(e);
   } finally {
