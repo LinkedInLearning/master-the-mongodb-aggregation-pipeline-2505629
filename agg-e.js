@@ -24,7 +24,7 @@ const agg = [
           `,
           merge: `function(state1, state2){
             return {
-              orders: state1.count + state2.count,
+              orders: state1.orders + state2.orders,
               sum: state1.sum + state2.sum
             }
           }`,
