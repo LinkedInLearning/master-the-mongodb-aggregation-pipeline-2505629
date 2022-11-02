@@ -7,42 +7,12 @@ const client = new MongoClient(uri);
 
 const agg = [
   {
-    $match: {
-      quantity: {
-        $gt: 500,
-      },
+    $lookup: {
+      from: "products",
+      localField: "items",
+      foreignField: "_id",
+      as: "items",
     },
-  },
-  {
-    $addFields: {
-      discount: {
-        $cond: [
-          {
-            $lte: ["$price", 500],
-          },
-          0.4,
-          0.65,
-        ],
-      },
-    },
-  },
-  {
-    $addFields: {
-      salePrice: {
-        $multiply: [
-          "$price",
-          {
-            $subtract: [1, "$discount"],
-          },
-        ],
-      },
-    },
-  },
-  {
-    $unset: "quantity",
-  },
-  {
-    $out: "q4_specials",
   },
 ];
 
@@ -50,12 +20,11 @@ async function run() {
   try {
     const database = client.db("linkedin");
     const result = await database
-      .collection("products")
+      .collection("vendors")
       .aggregate(agg)
       .toArray();
 
-    const data = await database.collection("q4_specials").find().toArray();
-    console.log(data);
+    console.log(result);
   } catch (e) {
     console.log(e);
   } finally {
