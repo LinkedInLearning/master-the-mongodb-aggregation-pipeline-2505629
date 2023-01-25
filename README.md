@@ -59,4 +59,4 @@ Ado Kukic
 Check out my other courses on [LinkedIn Learning](https://www.linkedin.com/learning/instructors/ado-kukic).
 
 [lil-course-url]: https://www.linkedin.com/learning/master-the-mongodb-aggregation-pipeline?dApp=59033956
-[lil-thumbnail-url]: [https://cdn.lynda.com/course/2505629/1671740249495?e=2147483647&v=beta&t=Gy5XDxb9-IirerdaBNfhFPr1Hc5XB7jNsYn3FXOHpzo-16x9.jpg](https://media.licdn.com/dms/image/C560DAQGafKcmzWL4vw/learning-public-crop_675_1200/0/1671740249495?e=2147483647&v=beta&t=Gy5XDxb9-IirerdaBNfhFPr1Hc5XB7jNsYn3FXOHpzo)
+[lil-thumbnail-url]: https://media.licdn.com/dms/image/C560DAQGafKcmzWL4vw/learning-public-crop_675_1200/0/1671740249495?e=2147483647&v=beta&t=Gy5XDxb9-IirerdaBNfhFPr1Hc5XB7jNsYn3FXOHpzo
