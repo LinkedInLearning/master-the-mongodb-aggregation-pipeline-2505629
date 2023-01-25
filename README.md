@@ -1,11 +1,9 @@
 # Master the MongoDB Aggregation Pipeline
+This is the repository for the LinkedIn Learning course Master the MongoDB Aggregation Pipeline. The full course is available from [LinkedIn Learning][lil-course-url].
 
-This is the repository for the LinkedIn Learning course
-`Master the MongoDB Aggregation Pipeline`. The full course is available from
-[LinkedIn Learning][lil-course-url].
+![Master the MongoDB Aggregation Pipeline][lil-thumbnail-url] 
 
-_See the readme file in the main branch for updated instructions and
-information._
+The MongoDB Aggregation Framework allows developers to manipulate and transform data stored in a MongoDB database to fit almost any use case. The aggregation pipeline consists of a series of user-defined stages that manipulate data to produce a final result. The aggregation framework is a very powerful, but also complex tool. In this course, instructor and full-stack developer Ado Kukic explores advanced data analysis and manipulation topics in MongoDB. Ado shows you how to properly use the aggregation framework, highlighting potential use cases and best practices, and shares tips and tricks to help you get even more value from your MongoDB databases.
 
 ## Instructions
 
@@ -50,6 +48,15 @@ changes using this command: git commit -m "some message"
 5. Run `npm install` to install the required `mongodb` and `dotenv`
    dependencies.
 
-[0]: # "Replace these placeholder URLs with actual course URLs"
-[lil-course-url]: https://www.linkedin.com/learning/
-[lil-thumbnail-url]: http://
+[### Instructor
+
+Ado Kukic 
+                            
+
+
+                            
+
+Check out my other courses on [LinkedIn Learning](https://www.linkedin.com/learning/instructors/ado-kukic).
+
+[lil-course-url]: https://www.linkedin.com/learning/master-the-mongodb-aggregation-pipeline?dApp=59033956
+[lil-thumbnail-url]: https://media.licdn.com/dms/image/C560DAQGafKcmzWL4vw/learning-public-crop_675_1200/0/1671740249495?e=2147483647&v=beta&t=Gy5XDxb9-IirerdaBNfhFPr1Hc5XB7jNsYn3FXOHpzo
